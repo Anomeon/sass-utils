@@ -1,5 +1,5 @@
 // @param {px} $container-max-width (optional)
-=flex-grid-container($container-max-width: null)
+=flex-grid-wrapper($container-max-width: null)
   display: flex
   flex-wrap: wrap
   @if $container-max-width
@@ -8,7 +8,7 @@
 // @param {int} $items-in-row
 // @param {px} $items-gutter
 // @param {px} $item-margin-bottom (optional)
-=flex-grid-items($items-in-row, $items-gutter, $item-margin-bottom: null)
+=flex-grid-item($items-in-row, $items-gutter, $item-margin-bottom: null)
   width: calc(#{100% / $items-in-row} - #{$items-gutter * ($items-in-row - 1) / ($items-in-row)})
   @if $item-margin-bottom
     margin-bottom: $item-margin-bottom
