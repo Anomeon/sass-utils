@@ -1,0 +1,17 @@
+// @param {px} $wrapper-max-width (optional)
+=flex-grid-wrapper($wrapper-max-width: null)
+  display: flex
+  flex-wrap: wrap
+  @if $wrapper-max-width
+    max-width: $wrapper-max-width
+
+// @param {int} $items-in-row
+// @param {px}  $item-gutter
+// @param {px}  $item-margin-bottom (optional)
+=flex-grid-item($items-in-row, $item-gutter, $item-margin-bottom: null)
+  width: calc(#{100% / $items-in-row} - #{$item-gutter * ($items-in-row - 1) / ($items-in-row)})
+  @if $item-margin-bottom
+    margin-bottom: $item-margin-bottom
+  margin-right: $item-gutter
+  &:nth-child(#{$items-in-row}n-#{$items-in-row})
+    margin-right: 0
